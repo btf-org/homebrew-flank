@@ -3,7 +3,7 @@ class Flank < Formula
   homepage "https://github.com/btf-org/flank"
   url "https://github.com/btf-org/flank/archive/refs/heads/main.tar.gz"
   version "0.1.0"
-  sha256 "43119d8332e914fb665242ed2f44adab33508d2cb34c2ae0c8ce38a9a987ba34"
+  sha256 "4816e613d998f4fb4cf98578860c58987ea9e206a5bc2b03b61f5c8a8d480396"
 
 
 
