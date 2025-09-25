@@ -3,12 +3,15 @@ class Flank < Formula
   homepage "https://github.com/btf-org/flank"
   url "https://github.com/btf-org/flank/archive/refs/heads/main.tar.gz"
   version "0.1.0"
-  sha256 "4816e613d998f4fb4cf98578860c58987ea9e206a5bc2b03b61f5c8a8d480396"
+  sha256 "79c9df6eab9bff7f88109cead0f4e17786fd6e5521838b0c1955de2c4a32edc3"
 
 
 
   def install
     bin.install "flank" => "flank" if File.exist?("flank")
+
+    system "gcc", "flsh.c", "-o", "flsh"
+    bin.install "flsh"
 
     (prefix/"INSTALL_LOG.txt").write("Installed at #{Time.now}")
   end
