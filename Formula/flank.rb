@@ -10,8 +10,11 @@ class Flank < Formula
   def install
     bin.install "flank" => "flank" if File.exist?("flank")
 
-    system "gcc", "flsh.c", "-o", "flsh"
-    bin.install "flsh"
+    system "gcc", "iflank.c", "-o", "iflank"
+    bin.install "iflank"
+
+    system "gcc", "server.c", "-o", "flankserver"
+    bin.install "flankserver"
 
     (prefix/"INSTALL_LOG.txt").write("Installed at #{Time.now}")
   end
