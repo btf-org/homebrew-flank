@@ -23,6 +23,7 @@ class Flank < Formula
 
   def caveats
     <<~EOS
+
       Flank has been installed!
       
       If you care, there are three components:
@@ -39,8 +40,11 @@ class Flank < Formula
       Your programs will be stored in files in
         #{var}/flank
 
-      To get started, run `flank` and follow the prompts:
-        $ flank
+      #####################################
+      ##   To get started, run `flank`   ##
+      ##     $ flank                     ##
+      #####################################
+
     EOS
   end
 
