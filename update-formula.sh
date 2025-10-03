@@ -15,3 +15,8 @@ sed -i '' "s/version \".*/version \""$TAG_NO_V"\"/" Formula/flank.rb
 grep "url" Formula/flank.rb
 grep "version" Formula/flank.rb
 grep "sha256" Formula/flank.rb
+
+read -rp "Hit enter to commit and push" choice
+git add Formula/flank.rb
+git commit -m "Update to $TAG"
+git push
