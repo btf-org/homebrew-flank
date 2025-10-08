@@ -13,7 +13,7 @@ class Flank < Formula
     system "gcc", "iflank.c", "-o", "iflank"
     bin.install "iflank"
 
-    system "gcc", "server.c", "-o", "flankserver"
+    system "gcc", "flankserver.c", "-o", "flankserver"
     bin.install "flankserver"
 
     pkgshare.install "index.html"
