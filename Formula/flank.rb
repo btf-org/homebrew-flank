@@ -9,10 +9,7 @@ class Flank < Formula
 
   def install
     bin.install "flank" => "flank" if File.exist?("flank")
-
-    system "gcc", "iflank.c", "-o", "iflank"
-    bin.install "iflank"
-
+    bin.install "iflank" => "iflank" if File.exist?("iflank")
     system "gcc", "flankserver.c", "-o", "flankserver"
     bin.install "flankserver"
 
