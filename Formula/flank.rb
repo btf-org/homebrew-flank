@@ -5,7 +5,7 @@ class Flank < Formula
   version "0.1.45"
   sha256 "3431042eb0d44d18ff5f823f83bf71528e4257c45b4775278d9703b48ecaafb9"
 
-
+  depends_on "gettext"
 
   def install
     bin.install "flank" => "flank" if File.exist?("flank")
