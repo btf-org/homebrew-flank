@@ -21,32 +21,27 @@ class Flank < Formula
   def caveats
     <<~EOS
 
-      Flank has been installed!
-      
-      If you care, there are three components:
-        1. The restricted shell, installed at
-            #{bin}/iflank
-        2. The server that chats with the shell, at
-            #{bin}/flankserver
-        3. The CLI utility, installed at
-            #{bin}/flank
-      
-      The webpage is stored at
-        #{pkgshare}/index.html
+    To start the server:
 
-      Your programs will be stored in files in
-        #{var}/flank
+      brew services start flank
 
-      #####################################
-      ##   To get started, run `flank`   ##
-      ##     $ flank                     ##
-      #####################################
+    To stop:
+
+      brew services stop flank
 
     EOS
   end
 
   def post_install
     (var/"flank").mkpath
+    (var/"log/flank").mkpath
+  end
+
+  service do
+    run [opt_bin/"flankserver"]
+    keep_alive true
+    log_path var/"log/flank/flankserver.log"
+    error_log_path var/"log/flank/flankserver.err"
   end
 end
 
