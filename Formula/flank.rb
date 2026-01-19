@@ -5,6 +5,7 @@ class Flank < Formula
   version "0.1.61"
   sha256 "deb1296da56e10d15dd042eea71a9c3a2f680ba1cb368064fb030785d18e0de8"
 
+  # the package that includes `envsubst`
   depends_on "gettext"
 
   def install
