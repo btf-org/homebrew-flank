@@ -6,7 +6,6 @@ class Flank < Formula
   sha256 "249493bde796bd49aeaccf619a5c66b3c4964b64bdd799404b13b50ed7653e45"
 
   def install
-    bin.install "flank" => "flank" if File.exist?("flank")
     bin.install "iflank" => "iflank" if File.exist?("iflank")
     system "gcc", "flankserver.c", "-o", "flankserver"
     bin.install "flankserver"
