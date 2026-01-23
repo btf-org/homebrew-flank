@@ -30,7 +30,12 @@ class Flank < Formula
   end
 
   def post_install
-    (var/"flank").mkpath
+    # Make sure the target directory exists
+    (var/"flank/Quickstarts/hello_world").mkpath
+
+    # Copy the single file
+    cp buildpath/"var/flank/Quickstarts/hello_world/template.sh", var/"flank/Quickstarts/hello_world/template.sh"
+
     (var/"log/flank").mkpath
   end
 
