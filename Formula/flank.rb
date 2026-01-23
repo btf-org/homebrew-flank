@@ -11,6 +11,7 @@ class Flank < Formula
     bin.install "flankserver"
 
     pkgshare.install "index.html"
+    (var/"flank/Quickstarts/hello_world").install "build/var/flank/Quickstarts/hello_world/template.sh"
 
     (prefix/"INSTALL_LOG.txt").write("Installed at #{Time.now}")
   end
@@ -30,9 +31,6 @@ class Flank < Formula
   end
 
   def post_install
-    (var/"flank/Quickstarts/hello_world").mkpath
-    (var/"flank/Quickstarts/hello_world").install "build/var/flank/Quickstarts/hello_world/template.sh"
-
     (var/"log/flank").mkpath
   end
 
