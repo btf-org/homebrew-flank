@@ -32,7 +32,7 @@ class Flank < Formula
   def post_install
     flank_hello = var/"flank/Quickstarts/hello_world"
     flank_hello.mkpath
-    (buildpath/"var/flank/Quickstarts/hello_world/template.sh").install flank_hello
+    (buildpath/"build/var/flank/Quickstarts/hello_world/template.sh").install flank_hello
 
     (var/"log/flank").mkpath
   end
