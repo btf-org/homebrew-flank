@@ -14,7 +14,6 @@ class Flank < Formula
     bin.install "flankserver"
 
     pkgshare.install "index.html"
-    (var/"flank/Quickstarts/hello_world").install "build/var/flank/Quickstarts/hello_world/template.sh"
 
     (prefix/"INSTALL_LOG.txt").write("Installed at #{Time.now}")
   end
@@ -35,13 +34,6 @@ class Flank < Formula
 
   def post_install
     (var/"log/flank").mkpath
-  end
-
-  service do
-    run [opt_bin/"flankserver"]
-    keep_alive true
-    log_path var/"log/flank/flankserver.log"
-    error_log_path var/"log/flank/flankserver.err"
   end
 end
 
