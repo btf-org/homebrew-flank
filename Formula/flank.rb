@@ -23,11 +23,11 @@ class Flank < Formula
 
     To start the server:
 
-      brew services start flank
+      nohup $(which flankserver) >> $(brew --prefix)/var/log/flank/flankserver.log 2>> $(brew --prefix)/var/log/flank/flankserver.err
 
     To stop:
 
-      brew services stop flank
+      kill $(pgrep -f flankserver)
 
     EOS
   end
