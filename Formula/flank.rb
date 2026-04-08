@@ -4,6 +4,9 @@ class Flank < Formula
   url "https://github.com/btf-org/flank/archive/refs/tags/v0.1.80.tar.gz"
   version "0.1.80"
   sha256 "0ac5157d80674c5fe4de90180fec1c192e1e4cd1fea30dfc683f9c0a503e898a"
+  depends_on "graphviz"
+  depends_on "makefile2graph"
+  depends_on "util-linux"
 
   def install
     bin.install "iflank" => "iflank" if File.exist?("iflank")
