@@ -1,9 +1,9 @@
 class Flank < Formula
   desc "Test formula that installs the flank script"
   homepage "https://github.com/btf-org/flank"
-  url "https://github.com/btf-org/flank/archive/refs/tags/v0.1.82.tar.gz"
-  version "0.1.82"
-  sha256 "c205cff96fac40434f6dcf911d9e2c97b94702b8c76a90fdb12895858bc0bccb"
+  url "https://github.com/btf-org/flank/archive/refs/tags/v0.1.83.tar.gz"
+  version "0.1.83"
+  sha256 "279d1e7d061b450404e093cfe14c562f037f96b54b4fefd90532da27a6b02bf5"
   depends_on "graphviz"
   depends_on "makefile2graph"
   depends_on "util-linux"
