@@ -31,6 +31,7 @@ class Flank < Formula
 
   def post_install
     (var/"log/flank").mkpath
+    (var/"flank").mkpath
   end
 
   service do
