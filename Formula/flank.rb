@@ -4,9 +4,6 @@ class Flank < Formula
   url "https://github.com/btf-org/flank/archive/refs/tags/v0.1.86.tar.gz"
   version "0.1.86"
   sha256 "994e0c8c7467ae28778b6973aca871e2a11367e2785fe51035f7a7c565727812"
-  depends_on "graphviz"
-  depends_on "makefile2graph"
-  depends_on "util-linux"
 
   def install
     bin.install "iflank" => "iflank" if File.exist?("iflank")
@@ -23,11 +20,11 @@ class Flank < Formula
 
     To start the server:
 
-      nohup $(which flankserver) >> $(brew --prefix)/var/log/flank/flankserver.log 2>> $(brew --prefix)/var/log/flank/flankserver.err
+      brew services start flank
 
     To stop:
 
-      kill $(pgrep -f flankserver)
+      brew services stop flank
 
     EOS
   end
@@ -35,5 +32,13 @@ class Flank < Formula
   def post_install
     (var/"log/flank").mkpath
   end
+
+  service do
+    run [opt_bin/"flankserver"]
+    keep_alive true
+    log_path var/"log/flank/flankserver.log"
+    error_log_path var/"log/flank/flankserver.err"
+  end
+
 end
 
