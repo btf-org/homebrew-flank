@@ -1,9 +1,9 @@
 class Flank < Formula
   desc "Test formula that installs the flank script"
   homepage "https://github.com/btf-org/flank"
-  url "https://github.com/btf-org/flank/archive/refs/tags/v0.1.90.tar.gz"
-  version "0.1.90"
-  sha256 "d355896ed3fad4ff45c3c64ba6485aa31302a59b3390055552f88dd405278bd5"
+  url "https://github.com/btf-org/flank/archive/refs/tags/v0.1.91.tar.gz"
+  version "0.1.91"
+  sha256 "ef63f890c7b1f0bf79978f5594abda7aba3d8a6ae1081a19e0b503f30fd7dc65"
 
   def install
     bin.install "iflank" => "iflank" if File.exist?("iflank")
